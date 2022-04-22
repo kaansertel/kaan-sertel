@@ -1,12 +1,13 @@
 const geocode = require('./utils/geocode.js')
 const weather = require('./utils/weather.js')
 const path = require('path')
-const pathDirc = path.join(__dirname,'../utils/src/index.html')
+const pathDirc = path.join(__dirname,'../public')
 const express = require('express')
-
 const app = express()
 
 const port = process.env.PORT || 3000
+
+const address = process.argv[2]
 
  app.get('/',(error,response) =>{
     response.send("Homepage")
